@@ -1,7 +1,7 @@
 import portfolioImg from "../assets/img/project-portfolio.png";
 import educationImg from "../assets/img/project-education.png";
 import userImg from "../assets/img/project-user.png";
-import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 const Projects = () => {
   const projects = [
     {
@@ -11,7 +11,7 @@ const Projects = () => {
       imgUrl: { portfolioImg },
     },
     {
-      title: "Landing Page for an education website",
+      title: "Landing Page ",
       description:
         "A next-gen landing page built using Next.js, Tailwind CSS and Acertinity UI",
       imgUrl: { educationImg },
@@ -24,43 +24,85 @@ const Projects = () => {
     },
   ];
   return (
-    <section className='project' id='project'>
+    <section
+      className='project'
+      id='projects'
+      style={{
+        background: "rgb(21,21,21)",
+      }}
+    >
       <Container>
+        <h2>Projects</h2>
+        <p>These are some projects that I have built with my skills.</p>
         <Row>
           <Col>
-            <h2>Projects</h2>
-            <p>These are some projects that I have built with my skills.</p>
-            <Tab.Container id='projects-tabs' defaultActiveKey='first'>
-              <Nav variant='pills' className='flex-column'>
-                <Nav.Item>
-                  <Nav.Link eventKey='first'>Tab 1</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='second'>Tab 2</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='third'>Tab 3</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <Tab.Content>
-                <Tab.Pane eventKey='first'>
-                  <Row>
-                    {projects.map((project) => (
-                      <Col key={project.title} md={4}>
-                        <div className='project-bx'>
-                          <img
-                            src={project.imgUrl.portfolioImg}
-                            alt={project.title}
-                          />
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
-                        </div>
-                      </Col>
-                    ))}
-                  </Row>
-                </Tab.Pane>
-              </Tab.Content>
-            </Tab.Container>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant='top' src={portfolioImg} />
+              <Card.Body>
+                <Card.Title
+                  className=' text-center'
+                  style={{ fontSize: "30px", color: "royalblue" }}
+                >
+                  {projects[0].title}
+                </Card.Title>
+                <Card.Text className='text-start' style={{ color: "black" }}>
+                  {projects[0].description}
+                </Card.Text>
+                <Button variant='primary'>
+                  <a href='/' style={{ color: "white" }}>
+                    Live Demo
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant='top' src={educationImg} />
+              <Card.Body>
+                <Card.Title
+                  className=' text-center'
+                  style={{ fontSize: "30px", color: "royalblue" }}
+                >
+                  {projects[1].title}
+                </Card.Title>
+                <Card.Text className='text-start' style={{ color: "black" }}>
+                  {projects[1].description}
+                </Card.Text>
+                <Button variant='primary'>
+                  <a
+                    href='https://education-website-nextjs-mu.vercel.app/'
+                    style={{ color: "white" }}
+                  >
+                    Live Demo
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant='top' src={userImg} />
+              <Card.Body>
+                <Card.Title
+                  className=' text-center '
+                  style={{ fontSize: "25px", color: "royalblue" }}
+                >
+                  {projects[2].title}
+                </Card.Title>
+                <Card.Text className='text-start' style={{ color: "black" }}>
+                  {projects[2].description}
+                </Card.Text>
+                <Button variant='primary'>
+                  <a
+                    href='https://github.com/VarchasvH/User_Management_CRUD_API'
+                    style={{ color: "white" }}
+                  >
+                    Github Link
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>

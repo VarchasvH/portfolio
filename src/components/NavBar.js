@@ -80,7 +80,18 @@ const NavBar = () => {
               </div>
 
               <button className='vvd'>
-                <span>Let’s Connect</span>
+                <Nav.Link
+                  href='#connect'
+                  className={
+                    activeLink === "connect"
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }
+                  style={{ color: "#4169e1" }}
+                  onClick={() => onUpdateActiveLink("connect")}
+                >
+                  Contact Me
+                </Nav.Link>
               </button>
             </span>
           </Navbar.Collapse>

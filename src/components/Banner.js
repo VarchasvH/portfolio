@@ -64,7 +64,13 @@ const Banner = () => {
                 managing beautiful wesbites and webpages{" "}
               </p>
               <button onClick={() => console.log("connected")}>
-                Let's Connect <ArrowRightCircle size={25} />
+                <a
+                  href='#connect'
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  Let's Connect
+                  <ArrowRightCircle size={25} />
+                </a>
               </button>
             </Col>
             <Col xs={12} md={6} xl={5}>
