@@ -1,6 +1,7 @@
 import portfolioImg from "../assets/img/project-portfolio.png";
 import educationImg from "../assets/img/project-education.png";
 import userImg from "../assets/img/project-user.png";
+import garageImg from "../assets/img/project-garage.png";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 const Projects = () => {
   const projects = [
@@ -17,9 +18,9 @@ const Projects = () => {
       imgUrl: { educationImg },
     },
     {
-      title: "User Management CRUD API",
+      title: "The Garage",
       description:
-        "An API written in Nodejs and built with express, jwt and cloudinary.",
+        "A modern front-end car website for the garage built with Next.js ",
       imgUrl: { userImg },
     },
   ];
@@ -35,6 +36,30 @@ const Projects = () => {
         <h2>Projects</h2>
         <p>These are some projects that I have built with my skills.</p>
         <Row>
+          <Col>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant='top' src={garageImg} />
+              <Card.Body>
+                <Card.Title
+                  className=' text-center '
+                  style={{ fontSize: "25px", color: "royalblue" }}
+                >
+                  {projects[2].title}
+                </Card.Title>
+                <Card.Text className='text-start' style={{ color: "black" }}>
+                  {projects[2].description}
+                </Card.Text>
+                <Button variant='primary'>
+                  <a
+                    href='https://the-garage-ashy.vercel.app/'
+                    style={{ color: "white" }}
+                  >
+                    Live Demo
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
           <Col>
             <Card style={{ width: "25rem" }}>
               <Card.Img variant='top' src={portfolioImg} />
@@ -75,30 +100,6 @@ const Projects = () => {
                     style={{ color: "white" }}
                   >
                     Live Demo
-                  </a>
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card style={{ width: "25rem" }}>
-              <Card.Img variant='top' src={userImg} />
-              <Card.Body>
-                <Card.Title
-                  className=' text-center '
-                  style={{ fontSize: "25px", color: "royalblue" }}
-                >
-                  {projects[2].title}
-                </Card.Title>
-                <Card.Text className='text-start' style={{ color: "black" }}>
-                  {projects[2].description}
-                </Card.Text>
-                <Button variant='primary'>
-                  <a
-                    href='https://github.com/VarchasvH/User_Management_CRUD_API'
-                    style={{ color: "white" }}
-                  >
-                    Github Link
                   </a>
                 </Button>
               </Card.Body>
