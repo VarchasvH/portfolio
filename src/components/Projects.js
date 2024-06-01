@@ -1,15 +1,15 @@
-import portfolioImg from "../assets/img/project-portfolio.png";
+import crypticImg from "../assets/img/crypticImg.png";
 import educationImg from "../assets/img/project-education.png";
+import brewistaImg from "../assets/img/brewistaImg.png";
 import userImg from "../assets/img/project-user.png";
-import garageImg from "../assets/img/project-garage.png";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 const Projects = () => {
   const projects = [
     {
-      title: "Portfolio website",
+      title: "Cryptic",
       description:
-        "A beautiful portfolio website built with React.js and Bootstrap",
-      imgUrl: { portfolioImg },
+        "A beautiful website to keep track of all your cryptocurrencies. Built with React, Material UI",
+      imgUrl: { crypticImg },
     },
     {
       title: "Landing Page ",
@@ -18,9 +18,9 @@ const Projects = () => {
       imgUrl: { educationImg },
     },
     {
-      title: "The Garage",
+      title: "Brewista",
       description:
-        "A modern front-end car website for the garage built with Next.js ",
+        "A beautiful static website for a Coffee company built using Next.js and Tailwind CSS",
       imgUrl: { userImg },
     },
   ];
@@ -38,7 +38,31 @@ const Projects = () => {
         <Row>
           <Col>
             <Card style={{ width: "25rem" }}>
-              <Card.Img variant='top' src={garageImg} />
+              <Card.Img variant='top' src={crypticImg} />
+              <Card.Body>
+                <Card.Title
+                  className=' text-center'
+                  style={{ fontSize: "30px", color: "royalblue" }}
+                >
+                  {projects[0].title}
+                </Card.Title>
+                <Card.Text className='text-start' style={{ color: "black" }}>
+                  {projects[0].description}
+                </Card.Text>
+                <Button variant='primary'>
+                  <a
+                    href='https://cryptic-lyart.vercel.app/'
+                    style={{ color: "white" }}
+                  >
+                    Live Demo
+                  </a>
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card style={{ width: "25rem" }}>
+              <Card.Img variant='top' src={brewistaImg} />
               <Card.Body>
                 <Card.Title
                   className=' text-center '
@@ -51,7 +75,7 @@ const Projects = () => {
                 </Card.Text>
                 <Button variant='primary'>
                   <a
-                    href='https://the-garage-ashy.vercel.app/'
+                    href='https://brewista.vercel.app/'
                     style={{ color: "white" }}
                   >
                     Live Demo
@@ -60,27 +84,7 @@ const Projects = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
-            <Card style={{ width: "25rem" }}>
-              <Card.Img variant='top' src={portfolioImg} />
-              <Card.Body>
-                <Card.Title
-                  className=' text-center'
-                  style={{ fontSize: "30px", color: "royalblue" }}
-                >
-                  {projects[0].title}
-                </Card.Title>
-                <Card.Text className='text-start' style={{ color: "black" }}>
-                  {projects[0].description}
-                </Card.Text>
-                <Button variant='primary'>
-                  <a href='/' style={{ color: "white" }}>
-                    Live Demo
-                  </a>
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
+
           <Col>
             <Card style={{ width: "25rem" }}>
               <Card.Img variant='top' src={educationImg} />
